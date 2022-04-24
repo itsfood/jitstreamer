@@ -1,0 +1,66 @@
+body {
+  background: black;
+  color: white;
+}
+
+#page-border {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: conic-gradient(
+    #a5ab9d 0deg,
+    #2dc0f5 45deg,
+    #9572ed 135deg,
+    #db3a76 225deg,
+    #b06452 315deg,
+    #a5ab9d 360deg
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-border .box {
+  background: black;
+}
+
+a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: conic-gradient(
+    #a5ab9d 0deg,
+    #2dc0f5 45deg,
+    #9572ed 135deg,
+    #db3a76 225deg,
+    #b06452 315deg,
+    #a5ab9d 360deg
+  );
+  border: none;
+  transition: 300ms;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.card {
+  border-radius: 0.7rem;
+  overflow: hidden;
+  border: none;
+}
+
+.card-header {
+  background: #302f2f;
+  border: none;
+}
+.card-body {
+  background: #484646;
+  border: none;
+}

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Jitstreamer</title>
+</head>
+
+<body>
+    <div id="page-border">
+        <div class="box" style="width: 100%; height: 100%; filter: blur(0px);">
+        </div>
+    </div>
+    <main class="container" style="margin-top: 20vh; opacity: 0; transform: scale(0.9);">
+        <div class="flex-column align-items-center justify-content-center" id="home" style="opacity: 1; display: flex;">
+            <img src="./media/images/JITSTREAMER.png" alt="Jitstreamer Logo" height="180px">
+            <!-- <h1 class="title">JIT Streamer</h1> -->
+            <p class="subtitle">A JIT enabler that works anywhere you have WiFi</p>
+            <div class="d-flex flex-row">
+                <button onclick="toSlide('step1')" class="btn btn-primary mx-1">Get Started</button>
+                <button onclick="toSlide('help')" class="btn btn-secondary mx-1">See FAQ</button>
+            </div> 
+        </div>
+        <div class="flex-column align-items-center justify-content-center" id="step1"
+            style="opacity: 0; display: none;">
+            <h1 class="title">Getting Started</h1>
+            <p class="subtitle">Step One</p>
+            <p>Download <a href="https://apps.apple.com/us/app/zerotier-one/id1084101492">ZeroTier One <i
+                        class="bi bi-box-arrow-up-right"></i></a> from the App Store. Add a new connection and type
+                017c0c264be7ec5b. Change DNS to Network DNS and click Add Network. Keep everything else default.</p>
+            <button onclick="toSlide('step2')" class="btn btn-primary">Next <i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="flex-column align-items-center justify-content-center" id="step2"
+            style="opacity: 0; display: none;">
+            <h1 class="title">Getting Started</h1>
+            <p class="subtitle">Step Two</p>
+            <p>Download the JIT shortcut <a href="http://shortcut.jitstreamer.com/">here <i
+                        class="bi bi-box-arrow-up-right"></i></a>, and run it while connected to the ZeroTier VLAN. Run
+                it to get a code.</p>
+            <button onclick="toSlide('step3')" class="btn btn-primary">Next <i class="bi bi-chevron-right"></i></button>
+        </div>
+        <div class="flex-column align-items-center justify-content-center" id="step3"
+            style="opacity: 0; display: none;">
+            <h1 class="title">Getting Started</h1>
+            <p class="subtitle">Step Three</p>
+            <p>Download PAIR for your computer from <a href="https://github.com/jkcoxson/JitStreamer/releases/">this
+                    website <i class="bi bi-box-arrow-up-right"></i></a> . Plug in your device and follow the
+                instructions to generate your pairing file. Enter the code from the shortcut when prompted.</p>
+            <button onclick="toSlide('step4')" class="btn btn-primary">Next <i class="bi bi-chevron-right"></i></button>
+            <span class="alert alert-info py-1 px-2 mt-5"><strong>Note:</strong> You only have to do this once!</span>
+        </div>
+        <div class="flex-column align-items-center justify-content-center" id="step4"
+            style="opacity: 0; display: none;">
+            <h1 class="title">Getting Started</h1>
+            <p class="subtitle">Step Four</p>
+            <p>Choose the app you want to enable JIT for from the menu that pops up.</p>
+            <button onclick="toSlide('done')" class="btn btn-primary">Next <i class="bi bi-chevron-right"></i></button>
+            <span class="alert alert-info py-1 px-2 mt-5"><strong>Note:</strong> You must be on the VLAN over
+                <i>WIFI</i> to use the shortcut!</span>
+        </div>
+        <div class="flex-column align-items-center justify-content-center" id="done" style="opacity: 0; display: none;">
+            <h1 class="title">Getting Started</h1>
+            <p class="subtitle">Profit!</p>
+            <p>Now you can access your favorite JIT-enabled apps on the go, wherever you have WIFI.</p>
+
+            <div class="d-flex flex-row">
+                <button onclick="toSlide('help')" class="btn btn-secondary mx-1">Need More Help? <i
+                        class="bi bi-chevron-right"></i></button>
+                <button onclick="toSlide('home')" class="btn btn-secondary mx-1">Back Home<i
+                        class="bi bi-chevron-left"></i></button>
+            </div>
+        </div>
+
+        <div class="flex-column align-items-center justify-content-center" id="help" style="opacity: 0; display: none;">
+            <h1 class="title">Extra Help</h1>
+            <p class="subtitle">FAQ</p>
+            <p><i>Click or Tap on the question to see the answer.</i></p>
+            <div class="card mb-2">
+                <div class="card-header" data-bs-toggle="collapse" data-bs-target="#qa1" aria-expanded="false"
+                    aria-controls="qa1">
+                    <p>I'm connected to the ZeroTier VLAN and it's still not loading. What do I do?</p>
+                </div>
+                <div class="collapse card-body" id="qa1"> ZeroTier is kinda crap, and takes a few minutes to initialize
+                    even when it says it's connected.
+                </div>
+            </div>
+            <div class="card mb-2">
+                <div class="card-header" data-bs-toggle="collapse" data-bs-target="#qa2" aria-expanded="false"
+                    aria-controls="qa2">
+                    <p>I'm connected to the ZeroTier VLAN and it's still not loading. What do I do?</p>
+                </div>
+                <div class="collapse card-body" id="qa2"> ZeroTier is kinda crap, and takes a few minutes to initialize
+                    even when it says it's connected.
+                </div>
+            </div>
+            <button onclick="toSlide('home')" class="btn btn-secondary">Back Home<i
+                    class="bi bi-chevron-left"></i></button>
+        </div>
+    </main>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+<!-- Confetti  JS-->
+<script src="./js/confetti.js"></script>
+
+<!-- Page Script -->
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
+    gsap.registerPlugin(MotionPathPlugin);
+    gsap.registerPlugin(TextPlugin);
+
+    gsap.to("#page-border .box", {
+        width: "97%",
+        height: "97%",
+        filter: "blur(35px)",
+        duration: 5,
+        ease: "power1.out",
+        delay: 0.3
+    });
+    gsap.to(".container", {
+        opacity: 1,
+        scale: 1,
+        duration: 2,
+        ease: "power2.out",
+        delay: 0.3
+    });
+
+    let currentSlide = 'home'
+    function toSlide(slide) {
+        gsap.to("#" + currentSlide, {
+            opacity: 0,
+            display: 'none',
+            duration: 0.5,
+            ease: "power2.out",
+            delay: 0
+        });
+        gsap.to("#" + slide, {
+            opacity: 1,
+            display: "flex",
+            duration: 0.5,
+            ease: "power2.out",
+            delay: 0.5
+        });
+        currentSlide = slide;
+
+        if (slide == 'done') {
+            setTimeout(() => { confetti.start() }, 500);
+        } else {
+            setTimeout(() => { confetti.stop() }, 500);
+        }
+    }
+</script>
+
+</html>
