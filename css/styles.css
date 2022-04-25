@@ -2,7 +2,25 @@ body {
   background: black;
   color: white;
 }
+main.container {
+  max-width: 576px;
+  margin: 0 auto;
+}
+div#logo {
+  position: absolute;
+  bottom: 2rem;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#logo img {
+  margin: 0;
+  height: 100%;
+}
 
+/* M1 Glow */
 #page-border {
   width: 100vw;
   height: 100vh;
@@ -26,11 +44,22 @@ body {
   background: black;
 }
 
+/* Anchor */
 a:hover {
   cursor: pointer;
   text-decoration: none;
 }
 
+/* Buttons */
+.btn {
+  transition: 300ms;
+}
+.btn:hover {
+  transform: scale(1.05);
+}
+.btn:active {
+  transform: scale(0.95);
+}
 .btn-primary {
   background: conic-gradient(
     #a5ab9d 0deg,
@@ -41,21 +70,14 @@ a:hover {
     #a5ab9d 360deg
   );
   border: none;
-  transition: 300ms;
-}
-.btn-primary:hover {
-  transform: scale(1.05);
-}
-.btn-primary:active {
-  transform: scale(0.95);
 }
 
+/* Info Cards */
 .card {
   border-radius: 0.7rem;
   overflow: hidden;
   border: none;
 }
-
 .card-header {
   background: #302f2f;
   border: none;
