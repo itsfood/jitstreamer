@@ -5,25 +5,13 @@ body {
 main.container {
   max-width: 576px;
   margin: 0 auto;
-}
-div#logo {
-  position: absolute;
-  bottom: 2rem;
-  width: 100vw;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-div#logo img {
-  margin: 0;
-  height: 100%;
+  text-align: center;
 }
 
 /* M1 Glow */
 #page-border {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
@@ -42,6 +30,58 @@ div#logo img {
 }
 #page-border .box {
   background: black;
+}
+
+/* Text Coloring */
+.text-primary {
+  color: #2dc0f5 !important;
+}
+.text-info {
+  color: #9572ed !important;
+}
+
+/* Alert color */
+.alert-info {
+  background-color: #f5b8ce !important;
+  color: #951f4a !important;
+  border-color: #951f4a !important;
+}
+
+/* Page Footer */
+div#footer {
+  position: absolute;
+  bottom: 1rem;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div#footer img {
+  margin: 0;
+  height: 100%;
+  cursor: pointer;
+}
+div#footer a {
+  color: #d3d3d3;
+  text-decoration: none;
+  font-size: x-large;
+  cursor: pointer;
+  margin: 0 1.3rem;
+}
+
+/* Landing Connections Pannel */
+div#connections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+div#connections a {
+  color: white !important;
+  margin: 0 0.5rem;
+  font-size: 18pt;
 }
 
 /* Anchor */
@@ -75,14 +115,23 @@ a:hover {
 /* Info Cards */
 .card {
   border-radius: 0.7rem;
+  background: #302f2f;
   overflow: hidden;
-  border: none;
+  border: 2px solid #d16a90;
+}
+.card * {
+  border-radius: 0.6rem;
+}
+.card p {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 .card-header {
   background: #302f2f;
   border: none;
 }
 .card-body {
+  margin-top: 1rem;
   background: #484646;
-  border: none;
+  border: 2px solid #8daa66;
 }
