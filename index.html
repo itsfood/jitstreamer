@@ -18,9 +18,9 @@
     <!-- Page Icon -->
     <link rel="icon" type="img/png" href="./media/images/icon.png">
 
-    <title>JIT Streamer</title>
+    <title>JitStreamer</title>
     <!-- Open Graph Meta Tags-->
-    <meta property="og:title" content="JIT Streamer">
+    <meta property="og:title" content="JitStreamer">
     <meta property="og:description" content="A JIT enabler that works anywhere you have WiFi">
     <meta property="og:image" content="./media/images/ogimage.png">
 </head>
@@ -31,15 +31,36 @@
         </div>
     </div>
     <div id="footer" style="opacity: 0;">
+        <img class="me-3" src="./media/images/icon-white.png" alt="Jitstreamer Logo" onclick="highlightFooter()">
+        <p class="pt-3" id="footer-valbar" style="display: inherit; opacity: 1;">|</p>
+        <p class="pt-3" id="footer-equal" style="display: none; opacity: 0;">&equals;</p>
         <a href="https://discord.gg/WsT2hcwRVy" aria-label="Discord" target="_blank"><i class="bi bi-discord"></i></a>
-        <img src="./media/images/icon-white.png" alt="Jitstreamer Logo" onclick="toSlide('home')">
+        <i class="bi bi-plus" id="footer-plus-one" style="display: none; opacity: 0;"></i>
         <a href="https://github.com/jkcoxson/JitStreamer/" aria-label="GitHub" target="_blank"><i
                 class="bi bi-github"></i></a>
+        <i class="bi bi-plus" id="footer-plus-two" style="display: none; opacity: 0;"></i>
+        <a href="https://www.patreon.com/JitStreamer/" aria-label="Patreon" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                style="width: 25px; height: 31px; fill: #d3d3d3">
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path
+                    d="M512 194.8c0 101.3-82.4 183.8-183.8 183.8-101.7 0-184.4-82.4-184.4-183.8 0-101.6 82.7-184.3 184.4-184.3C429.6 10.5 512 93.2 512 194.8zM0 501.5h90v-491H0v491z" />
+            </svg>
+        </a>
+    </div>
+    <div id="footer-roll" style="opacity: 0; display: none; text-align: center; width: 100%;"
+        onclick="highlightFooter()">
+        <p id="lyric-one">Never gonna give you up</p>
+        <p id="lyric-two">Never gonna let you down</p>
+        <p id="lyric-three">Never gonna run around and desert you</p>
+        <p id="lyric-four">Never gonna make you cry</p>
+        <p id="lyric-five">Never gonna say goodbye</p>
+        <p id="lyric-six">Never gonna tell a lie and hurt you</p>
     </div>
     <main class="container" style="opacity: 0; transform: scale(0.9);">
         <div class="flex-column align-items-center justify-content-center" id="home" style="opacity: 1; display: flex;">
-            <img src="./media/images/logo.png" alt="JIT Streamer Logo" height="180px">
-            <!-- <h1 class="title">JIT Streamer</h1> -->
+            <img src="./media/images/logo.png" alt="JitStreamer Logo" height="180px">
+            <!-- <h1 class="title">JitStreamer</h1> -->
             <p class="fs-4">A JIT enabler that works anywhere you have WiFi</p>
             <div class="d-flex flex-row">
                 <button onclick="toSlide('help')" class="btn btn-secondary mx-1">See FAQ <i
@@ -48,12 +69,20 @@
                         class="bi bi-play-circle"></i></button>
             </div>
             <div class="mt-5 pb-3 d-flex flex-column justify-content-center">
-                <p class="p-0 m-0">Join the JIT Streamer community</p>
+                <p class="p-0 m-0">Join and Support the JitStreamer community</p>
                 <div id="connections">
                     <a href="https://discord.gg/WsT2hcwRVy" aria-label="Discord" target="_blank"><i
                             class="bi bi-discord"></i></a>
                     <a href="https://github.com/jkcoxson/JitStreamer/" aria-label="GitHub" target="_blank"><i
                             class="bi bi-github"></i></a>
+                    <a href="https://www.patreon.com/JitStreamer/" aria-label="Patreon" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                            style="width: 24px; height: 29px; fill: #fff; margin-top: -2px;">
+                            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M512 194.8c0 101.3-82.4 183.8-183.8 183.8-101.7 0-184.4-82.4-184.4-183.8 0-101.6 82.7-184.3 184.4-184.3C429.6 10.5 512 93.2 512 194.8zM0 501.5h90v-491H0v491z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -73,7 +102,7 @@
             </p>
             <p class="m-0">
                 <i class="bi bi-laptop"></i> <a href="https://github.com/jkcoxson/JitStreamer/releases/"
-                    class="text-primary">JIT Streamer Pair <i class="bi bi-box-arrow-up-right"></i></a>.
+                    class="text-primary">JitStreamer Pair <i class="bi bi-box-arrow-up-right"></i></a>.
             </p>
             <p class="fs-5 mt-3 mb-1">Icon Key</p>
             <p class="m-0">Steps or items with a <i class="bi bi-phone text-info"></i> icon will require a phone.</p>
@@ -109,7 +138,7 @@
             </p>
             <h1 class="title">Getting Started</h1>
             <p class="fs-4">Step Two</p>
-            <p>Run the <span class="text-info">JIT Streamer Shortcut</span> while connected to the <span
+            <p>Run the <span class="text-info">JitStreamer Shortcut</span> while connected to the <span
                     class="text-info">ZeroTier VLAN</span> to get a pairing code. You will need this in the next step.
             </p>
             <div class="d-flex flex-row">
@@ -125,7 +154,7 @@
                     class="bi bi-phone"></i></p>
             <h1 class="title">Getting Started</h1>
             <p class="fs-4">Step Three</p>
-            <p>Open <span class="text-info">JIT Streamer Pair</span>, and plug in your device. Follow
+            <p>Open <span class="text-info">JitStreamer Pair</span>, and plug in your device. Follow
                 the instructions to generate your pairing file, entering the code provided by the shortcut when
                 prompted.</p>
             <div class="d-flex flex-row">
@@ -169,7 +198,7 @@
             <h1 class="title">Extra Help</h1>
             <p class="fs-4">FAQ</p>
             <p class="text-muted fst-italic">Click or Tap on the question to see the answer.</p>
-            <div class="card mb-2 w-100">
+            <!-- <div class="card mb-2 w-100">
                 <div class="card-header" data-bs-toggle="collapse" data-bs-target="#qa1" aria-expanded="false"
                     aria-controls="qa1">
                     <p>I'm connected to the ZeroTier VLAN and it's still not loading. What do I do?</p>
@@ -181,11 +210,11 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="card mb-2 w-100">
                 <div class="card-header" data-bs-toggle="collapse" data-bs-target="#qa2" aria-expanded="false"
                     aria-controls="qa2">
-                    <p>Will JIT Streamer ever be updated to work over Cellular?</p>
+                    <p>Will JitStreamer ever be updated to work over Cellular?</p>
                 </div>
                 <div class="collapse" id="qa2">
                     <div class="card-body">
@@ -198,19 +227,17 @@
             <div class="card mb-2 w-100">
                 <div class="card-header" data-bs-toggle="collapse" data-bs-target="#qa3" aria-expanded="false"
                     aria-controls="qa3">
-                    <p>I got an error saying my device didn't respond to the pairing test, what do I do?</p>
+                    <p>I still need help, it still isn't working quite right.</p>
                 </div>
                 <div class="collapse" id="qa3">
                     <div class="card-body">
-                        <p>Unregister your device from JIT Streamer and try again.</p>
+                        <p>Come join our <a href="https://discord.gg/WsT2hcwRVy" class="text-primary">Discord <i
+                                    class="bi bi-box-arrow-up-right"></i></a> server and ask for help from the
+                            community!</p>
                         </p>
                     </div>
                 </div>
             </div>
-            <p class="py-2 text-muted">If you need any further support, come join our <a
-                    href="https://discord.gg/WsT2hcwRVy" class="text-primary">Discord <i
-                        class="bi bi-box-arrow-up-right"></i></a> server and ask for help.
-            </p>
             <button onclick="toSlide('home')" class="btn btn-secondary shadow"><i class="bi bi-chevron-left"></i>
                 Back Home</button>
         </div>
@@ -290,6 +317,171 @@
             setTimeout(() => { confetti.start() }, 500);
         } else {
             setTimeout(() => { confetti.stop() }, 500);
+        }
+    }
+
+    let footerClickCount = 0;
+    document.querySelectorAll('#footer-roll [id*="lyric"]').forEach(element => {
+        document.querySelector('#footer-roll').style.opacity = 0;
+        document.querySelector('#footer-roll').style.display = 'block';
+        let width = element.getBoundingClientRect().width;
+        try {
+            element.style.display = 'block';
+            element.style.left = '' + (window.innerWidth / 2) - (width / 2) + 'px';
+            element.style.opacity = 0;
+            element.style.display = 'none';
+            console.log(element.style);
+        } catch (error) {
+            console.log(error);
+        }
+        document.querySelector('#footer-roll').style.display = 'none';
+    });
+    function highlightFooter() {
+        footerClickCount++;
+        console.log(footerClickCount);
+        if (footerClickCount > 2) {
+            gsap.to("#footer", {
+                opacity: 0,
+                display: 'none',
+                duration: 0.5,
+                ease: "power2.out"
+            });
+            gsap.to("#footer-roll", {
+                opacity: 1,
+                display: 'block',
+                duration: 0.5,
+                ease: "power2.out"
+            });
+            gsap.to("#footer-valbar", {
+                text: "|",
+                duration: 0.5,
+                ease: "power2.out"
+            });
+            gsap.to(["#footer-equal", "#footer-plus-one", "#footer-plus-two"], {
+                opacity: 0,
+                display: 'none',
+                duration: 0.5,
+                ease: "power2.out"
+            });
+            switch (footerClickCount) {
+                case 3:
+                    gsap.to("#lyric-one", {
+                        opacity: 1,
+                        display: 'inherit',
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    break;
+                case 4:
+                    gsap.to("#lyric-one", {
+                        opacity: 0,
+                        display: 'none',
+                        duration: 0.5,
+                        y: -100,
+                        ease: "power2.out"
+                    });
+                    gsap.to("#lyric-two", {
+                        opacity: 1,
+                        display: 'inherit',
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    break;
+                case 5:
+                    gsap.to("#lyric-two", {
+                        opacity: 0,
+                        display: 'none',
+                        duration: 0.5,
+                        y: -100,
+                        ease: "power2.out"
+                    });
+                    gsap.to("#lyric-three", {
+                        opacity: 1,
+                        display: 'inherit',
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    break;
+                case 6:
+                    gsap.to("#lyric-three", {
+                        opacity: 0,
+                        display: 'none',
+                        duration: 0.5,
+                        y: -100,
+                        ease: "power2.out"
+                    });
+                    gsap.to("#lyric-four", {
+                        opacity: 1,
+                        display: 'inherit',
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    break;
+                case 7:
+                    gsap.to("#lyric-four", {
+                        opacity: 0,
+                        display: 'none',
+                        duration: 0.5,
+                        y: -100,
+                        ease: "power2.out"
+                    });
+                    gsap.to("#lyric-five", {
+                        opacity: 1,
+                        display: 'inherit',
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    break;
+                case 8:
+                    gsap.to("#lyric-five", {
+                        opacity: 0,
+                        display: 'none',
+                        duration: 0.5,
+                        y: -100,
+                        ease: "power2.out"
+                    });
+                    gsap.to("#lyric-six", {
+                        opacity: 1,
+                        display: 'inherit',
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    break;
+                default:
+                    gsap.to("#footer", {
+                        opacity: 1,
+                        display: 'flex',
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    gsap.to("#footer-roll", {
+                        opacity: 0,
+                        display: 'none',
+                        duration: 0.5,
+                        ease: "power2.out"
+                    });
+                    gsap.to("#lyric-six", {
+                        opacity: 0,
+                        display: 'none',
+                        duration: 0.5,
+                        y: -100,
+                        ease: "power2.out"
+                    });
+                    footerClickCount = 0;
+                    break;
+            }
+        } else {
+            gsap.to("#footer-valbar", {
+                text: "=",
+                duration: 0.5,
+                ease: "power2.out"
+            });
+            gsap.to(["#footer-plus-one", "#footer-plus-two"], {
+                opacity: 1,
+                display: 'inherit',
+                duration: 0.5,
+                ease: "power2.out"
+            });
         }
     }
 </script>

@@ -48,7 +48,8 @@ main.container {
 }
 
 /* Page Footer */
-div#footer {
+div#footer,
+div#footer-roll {
   position: fixed;
   bottom: 1rem;
   width: 100vw;
@@ -63,11 +64,17 @@ div#footer img {
   cursor: pointer;
 }
 div#footer a {
-  color: #d3d3d3;
+  color: #d3d3d3 !important;
   text-decoration: none;
   font-size: x-large;
   cursor: pointer;
   margin: 0 1.3rem;
+}
+div#footer-roll p {
+  color: #d3d3d3 !important;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0rem;
 }
 
 /* Landing Connections Pannel */
