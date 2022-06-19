@@ -85,18 +85,21 @@
     });
 
     // Send GET to server for pairing code using Fetch API
+    let x;
     function fetchPairingCode() {
         fetch("https://69.69.0.1/potential/", {
             method: "GET",
-            // mode: 'cors',
+            // mode: 'no-cors',
             // headers: {
             //     'Access-Control-Allow-Origin': '*',
             // }
         })
             .then(function (response) {
                 try {
-                    console.log(response);
-                    return response;
+                    // console.log(response.json());
+                    x = response;
+                    // console.log(x.json())
+                    return x.json();
                 } catch (error) {
                     throw new Error(error || 'Unknown parsing error');
                 }
@@ -106,6 +109,7 @@
                 if (data.success) {
                     // Display pairing code
                     document.querySelector('#code').textContent = data.code;
+                    document.querySelector('#title').textContent = 'Code generated successfully';
                     gsap.to("#spinner", {
                         opacity: 0,
                         display: "none",
@@ -120,7 +124,11 @@
                         delay: 0.5
                     });
                 } else {
-                    throw new Error(data.error || 'Unknown error');
+                    if (data.status == 200) {
+                        throw new Error(`Something is wrong with the response, status code: ${data.status}`);
+                    } else {
+                        throw new Error(`${data.status} "${data.statusText || 'Unknown error'}"`);
+                    }
                 }
             })
             .catch(function (error) {
@@ -176,12 +184,9 @@
                     if (data) {
                         setTimeout(() => {
                             document.querySelector('#title').textContent = "Generating pairing code...";
-                            try {
+                            setTimeout(() => {
                                 fetchPairingCode();
-                            } catch (error) {
-                                console.log(error);
-                                iframePairingCode();
-                            }
+                            }, 1500);
                         }, 1000)
 
                     } else {
