@@ -118,6 +118,11 @@ a:hover {
   );
   border: none;
 }
+.btn-info {
+  background: #9572ed;
+  border: #9572ed;
+  color: white;
+}
 
 /* Info Cards */
 .card {
@@ -141,4 +146,10 @@ a:hover {
   margin-top: 1rem;
   background: #484646;
   border: 2px solid #8daa66;
+}
+
+/* Badges */
+.badge.bg-info {
+  background: #9572ed !important;
+  color: white;
 }
