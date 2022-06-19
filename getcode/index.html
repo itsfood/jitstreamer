@@ -86,7 +86,7 @@
 
     // Send GET to server for pairing code using Fetch API
     function fetchPairingCode() {
-        fetch("http://69.69.0.1/potential/", {
+        fetch("https://69.69.0.1/potential/", {
             method: "GET",
             mode: 'cors',
             headers: {
@@ -168,7 +168,7 @@
     // Detect connection to ZeroTier network
     function generateCode() {
         try {
-            fetch("http://69.69.0.1/", { mode: 'no-cors' })
+            fetch("https://69.69.0.1/", { mode: 'no-cors' })
                 .then(function (response) {
                     return response;
                 })
