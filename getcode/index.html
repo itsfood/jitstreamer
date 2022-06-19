@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- Personal CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Page Icon -->
+    <link rel="icon" type="img/png" href="../media/images/favicon.png">
+
+    <title>JitStreamer | Get Pairing Code</title>
+    <!-- Open Graph Meta Tags-->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jitstreamer.com/">
+    <meta property="og:title" content="JitStreamer">
+    <meta property="og:description" content="A JIT enabler that works anywhere you have WiFi">
+    <meta property="og:image" content="https://jitstreamer.com/media/images/ogimage.png">
+</head>
+
+<body>
+    <div id="page-border">
+        <div class="box" style="width: 100%; height: 100%; filter: blur(0px);">
+        </div>
+    </div>
+    <main class="container" style="opacity: 0; transform: scale(0.9);">
+        <div class="flex-column align-items-center justify-content-center" id="home" style="opacity: 1; display: flex;">
+            <img src="../media/images/logo.png" alt="JitStreamer Logo" height="180px">
+            <!-- <h1 class="title">JitStreamer</h1> -->
+            <p class="fs-4" id="title">Please connect to ZeroTier</p>
+            <div class="spinner-border" role="status" id="spinner">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <iframe src="http://69.69.0.1/potential/" frameborder="0" width="0" height="0" id="serverResponseCode"
+                style="opacity: 0;"></iframe>
+            <p id="code" style="opacity: 0;">000000</p>
+            <p id="error" style="opacity: 0; font-size: smaller; color: gainsboro;">Error Details</p>
+        </div>
+        <!-- Bootstrap Bundle with Popper -->
+        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/MotionPathPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+<!-- Confetti  JS-->
+<script src="../js/confetti.js"></script>
+
+<!-- Page Script -->
+<script>
+    // Load page effects
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
+    gsap.registerPlugin(MotionPathPlugin);
+    gsap.registerPlugin(TextPlugin);
+
+    gsap.to("#page-border .box", {
+        width: "97%",
+        height: "97%",
+        filter: "blur(35px)",
+        duration: 5,
+        ease: "power1.out",
+        delay: 0.3
+    });
+    gsap.to(".container", {
+        opacity: 1,
+        scale: 1,
+        duration: 2,
+        ease: "power2.out",
+        delay: 0.3
+    });
+
+    // Send GET to server for pairing code using Fetch API
+    function fetchPairingCode() {
+        fetch("http://69.69.0.1/potential/", {
+            method: "GET",
+            mode: 'cors',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+            }
+        })
+            .then(function (response) {
+                try {
+                    console.log(response);
+                    return response;
+                } catch (error) {
+                    throw new Error(error || 'Unknown parsing error');
+                }
+            })
+            .then(function (data) {
+                console.log(data);
+                if (data.success) {
+                    // Display pairing code
+                    document.querySelector('#code').textContent = data.code;
+                    gsap.to("#spinner", {
+                        opacity: 0,
+                        display: "none",
+                        duration: 0.5,
+                        ease: "power2.out",
+                        delay: 0.5
+                    });
+                    gsap.to("#code", {
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out",
+                        delay: 0.5
+                    });
+                } else {
+                    throw new Error(data.error || 'Unknown error');
+                }
+            })
+            .catch(function (error) {
+                document.querySelector('#code').textContent = 'There was an error generating your pairing code. Please try again later.';
+                document.querySelector('#error').textContent = error;
+                gsap.to("#spinner", {
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+                gsap.to("#title", {
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+                gsap.to("#code", {
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+                gsap.to("#error", {
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+                console.log(error);
+            });
+    }
+
+    // Load iframe to server address to grab pairing code (Backup if fetch fails)
+    function iframePairingCode() {
+        // var iframe = document.createElement('iframe');
+        // iframe.id = "serverResponseCode";
+        // iframe.src = "http://69.69.0.1/potential/";
+        // // iframe.style.display = "none";
+        // document.body.appendChild(iframe);
+        try {
+            var content = document.getElementById('serverResponseCode').contentWindow.document || document.getElementById('serverResponseCode').contentDocument;
+            console.log(content);
+        } catch (error) {
+            throw new Error('iframe error' + error)
+        }
+    }
+
+    // Detect connection to ZeroTier network
+    function generateCode() {
+        try {
+            fetch("http://69.69.0.1/", { mode: 'no-cors' })
+                .then(function (response) {
+                    return response;
+                })
+                .then(function (data) {
+                    if (data) {
+                        setTimeout(() => {
+                            document.querySelector('#title').textContent = "Generating pairing code...";
+                            try {
+                                fetchPairingCode();
+                            } catch (error) {
+                                console.log(error);
+                                iframePairingCode();
+                            }
+                        }, 1000)
+
+                    } else {
+                        throw new Error('No connection to ZeroTier network');
+                    }
+                })
+                .catch(function (error) {
+                    throw new Error(error || 'Unknown error');
+                });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    if (document.readyState == 'complete') {
+        generateCode();
+    } else {
+        document.onreadystatechange = function () {
+            if (document.readyState === "complete") {
+                generateCode();
+            }
+        }
+    }
+</script>
+
+</html>
