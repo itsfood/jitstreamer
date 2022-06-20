@@ -99,17 +99,18 @@
                 the App Store.
             </p>
             <p class="m-0">
-                <span class="badge bg-info">iOS 15+</span><i class="bi bi-phone"></i> The <a
-                    href="http://shortcut.jitstreamer.com/" class="text-primary" target="_blank">JIT
-                    Streamer Shortcut <i class="bi bi-box-arrow-up-right"></i></a> for the Shortcuts app.
+                <i class="bi bi-phone"></i> The <a href="http://shortcut.jitstreamer.com/" class="text-primary"
+                    target="_blank">JIT Streamer Shortcut <i class="bi bi-box-arrow-up-right"></i></a> for the Shortcuts
+                app.
             </p>
             <p class="m-0">
                 <i class="bi bi-laptop"></i> <a href="https://github.com/jkcoxson/JitStreamer/releases/" target="_blank"
                     class="text-primary">JitStreamer Pair <i class="bi bi-box-arrow-up-right"></i></a> for your laptop.
             </p>
-            <p class="fs-5 mt-3 mb-1">Icon Key</p>
-            <p class="m-0">Steps or items with a <i class="bi bi-phone text-info"></i> icon will require a phone.</p>
-            <p class="m-0">Steps or items with a <i class="bi bi-laptop text-info"></i> icon will require a computer.
+            <p class="fs-4 mt-3 mb-1">Icon Key</p>
+            <p>Above each step, there will be icons depicting the devices needed during the step. Steps or items with a
+                <i class="bi bi-phone text-info"></i> icon will require a phone, and steps or items with a <i
+                    class="bi bi-laptop text-info"></i> icon will require a computer.
             </p>
             <div class="d-flex flex-row mt-3">
                 <button onclick="toSlide('home')" class="btn btn-secondary mx-1"><i class="bi bi-chevron-left"></i>
@@ -144,7 +145,7 @@
             <p>Generate a <span class="text-info">pairing code</span>. Remain on the <span class="text-info">ZeroTier
                     VLAN</span> while you generate your code. Copy or make note of it, you will need this in the next
                 step.</p>
-            <div class="d-flex flex-md-row flex-column">
+            <div class="d-flex flex-md-row flex-column w-100">
                 <div class="w-100" style="margin-bottom: 0.7rem;">
                     <p style="font-weight: bold; font-size: large; font-style: italic; margin: 0.2rem;">iOS 15 and Newer
                     </p>
@@ -155,8 +156,7 @@
                 <div class="w-100" style="margin-bottom: 0.7rem;">
                     <p style="font-weight: bold; font-size: large; font-style: italic; margin: 0.2rem;"><span
                             class="badge bg-info" id="generateCodeBadge">NEW</span> iOS 14 and Older</p>
-                    <p class="mb-3" id="generateCode" style="margin: 0.2rem;">You can now generate a code right here!
-                    </p>
+                    <p id="generateCode" style="margin: 0.2rem;">Generate a code here</p>
                     <a class="btn btn-info" href="./getcode/" id="generateCodeBtn" style="margin: 0.2rem;">Get Code</a>
                 </div>
             </div>
@@ -165,7 +165,6 @@
                 // if date is past July 1, 2022, remove new tag, update text, and update button
                 if (date.getFullYear() > 2022 || (date.getFullYear() == 2022 && date.getMonth() > 6) || test) {
                     document.getElementById("generateCodeBadge").remove();
-                    document.getElementById("generateCode").textContent = "Generate a code right here";
                 }
             </script>
             <div class="d-flex flex-row" style="margin-top: 1rem;">
@@ -210,16 +209,17 @@
             <p class="fs-4 mb-0"><i class="bi bi-cash-stack"></i></p>
             <h1 class="title">Quick Setup</h1>
             <p class="fs-4">Profit!</p>
-            <p>Now you can access your favorite JIT-enabled apps on the go, wherever you have WIFI.</p>
+            <p>Now you have access to your favorite JIT-enabled apps on the go, wherever you have WIFI!</p>
             <div class="d-flex flex-row">
                 <button onclick="toSlide('home')" class="btn btn-secondary mx-1"><i class="bi bi-chevron-left"></i> Back
                     Home</button>
                 <button onclick="toSlide('help')" class="btn btn-secondary mx-1">Need More Help? <i
                         class="bi bi-chevron-right"></i></button>
             </div>
-            <div class="mt-5 pb-3 d-flex flex-column justify-content-center">
-                <p class="p-0 m-0">Join and Support the JitStreamer community</p>
-                <div id="connections">
+            <div class="d-flex flex-column justify-content-center pt-3">
+                <p class="p-0 m-0"> Join our Discord to support the community, and consider supporting us on Patreon to
+                    help fund the project.</p>
+                <div id="connections" class="mt-2">
                     <a href="https://discord.gg/WsT2hcwRVy" aria-label="Discord" target="_blank"><i
                             class="bi bi-discord"></i></a>
                     <a href="https://github.com/jkcoxson/JitStreamer/" aria-label="GitHub" target="_blank"><i
@@ -258,21 +258,21 @@
             <div class="card mb-2 w-100">
                 <div class="card-header" data-bs-toggle="collapse" data-bs-target="#qa3" aria-expanded="false"
                     aria-controls="qa3">
-                    <p>I still need help, it still isn't working quite right.</p>
+                    <p>I still need help, something isn't working quite right.</p>
                 </div>
                 <div class="collapse" id="qa3">
                     <div class="card-body">
-                        <p>Come join our <a href="https://discord.gg/WsT2hcwRVy" class="text-primary">Discord <i
-                                    class="bi bi-box-arrow-up-right"></i></a> server and ask for help from the
-                            community!</p>
+                        <p>Come join our Discord server and ask for help from the community!
                         </p>
+                        <a href="https://discord.gg/WsT2hcwRVy" class="btn btn-primary mt-2" target="_blank">Join <i
+                                class="bi bi-box-arrow-up-right"></i> </a>
                     </div>
                 </div>
             </div>
             <div class="card mb-2 w-100">
                 <div class="card-header" data-bs-toggle="collapse" data-bs-target="#qa1" aria-expanded="false"
                     aria-controls="qa1">
-                    <p>I want to help support the JitStreamer's expenses, how can I help?</p>
+                    <p>I want to help support the JitStreamer project, how can I help?</p>
                 </div>
                 <div class="collapse" id="qa1">
                     <div class="card-body">
@@ -281,7 +281,8 @@
                             thanks.
                         </p>
                         <a href="https://www.patreon.com/JitStreamer" class="btn btn-primary mt-2" target="_blank">Open
-                            <i class="bi bi-box-arrow-up-right"></i></a></a>
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
