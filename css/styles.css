@@ -77,7 +77,7 @@ div#footer-roll p {
   bottom: 0rem;
 }
 
-/* Landing Connections Pannel */
+/* Landing Connections Panel */
 div#connections {
   display: flex;
   justify-content: center;
@@ -99,6 +99,7 @@ a:hover {
 
 /* Buttons */
 .btn {
+  border-radius: 0.7rem !important;
   transition: 300ms;
 }
 .btn:hover {
@@ -119,8 +120,13 @@ a:hover {
   border: none;
 }
 .btn-info {
-  background: #9572ed;
-  border: #9572ed;
+  background: #9572ed !important;
+  border: #9572ed !important;
+  color: white;
+}
+.btn-info:hover {
+  background: #6946c2 !important;
+  border: #6946c2 !important;
   color: white;
 }
 

@@ -33,7 +33,7 @@
         </div>
     </div>
     <div id="footer" style="opacity: 0;">
-        <img class="me-3" src="./media/images/icon-white.png" alt="Jitstreamer Logo" onclick="highlightFooter()">
+        <img class="me-3" src="./media/images/icon-white.png" alt="JitStreamer Logo" onclick="highlightFooter()">
         <p class="pt-3" id="footer-valbar" style="display: inherit; opacity: 1;">|</p>
         <p class="pt-3" id="footer-equal" style="display: none; opacity: 0;">&equals;</p>
         <a href="https://discord.gg/WsT2hcwRVy" aria-label="Discord" target="_blank"><i class="bi bi-discord"></i></a>
@@ -65,10 +65,10 @@
             <!-- <h1 class="title">JitStreamer</h1> -->
             <p class="fs-4">A JIT enabler that works anywhere you have WiFi</p>
             <div class="d-flex flex-row">
-                <button onclick="toSlide('help')" class="btn btn-secondary mx-1">See FAQ <i
-                        class="bi bi-question-circle"></i></button>
-                <button onclick="toSlide('step0')" class="btn btn-primary mx-1">Get Started <i
-                        class="bi bi-play-circle"></i></button>
+                <button onclick="toSlide('help')" class="btn btn-secondary mx-1"><i class="bi bi-question-circle"></i>
+                    FAQ</button>
+                <button onclick="toSlide('step0')" class="btn btn-primary mx-1"><i class="bi bi-play-circle"></i>
+                    Begin</button>
             </div>
             <div class="mt-5 pb-3 d-flex flex-column justify-content-center">
                 <p class="p-0 m-0">Join and Support the JitStreamer community</p>
@@ -91,20 +91,21 @@
         <div class="flex-column align-items-center justify-content-center" id="step0"
             style="opacity: 0; display: none;">
             <p class="fs-4 mb-0"><i class="bi bi-list-check"></i></p>
-            <h1 class="title">Getting Started</h1>
+            <h1 class="title">Quick Setup</h1>
             <p class="fs-4 mb-1">What You'll Need</p>
             <p class="m-0">
                 <i class="bi bi-phone"></i> <a href="https://apps.apple.com/us/app/zerotier-one/id1084101492"
-                    class="text-primary">ZeroTier One <i class="bi bi-box-arrow-up-right"></i></a> from the App
-                Store.
+                    class="text-primary" target="_blank">ZeroTier One <i class="bi bi-box-arrow-up-right"></i></a> from
+                the App Store.
             </p>
             <p class="m-0">
-                <i class="bi bi-phone"></i> <a href="http://shortcut.jitstreamer.com/" class="text-primary">JIT
+                <span class="badge bg-info">iOS 15+</span><i class="bi bi-phone"></i> The <a
+                    href="http://shortcut.jitstreamer.com/" class="text-primary" target="_blank">JIT
                     Streamer Shortcut <i class="bi bi-box-arrow-up-right"></i></a> for the Shortcuts app.
             </p>
             <p class="m-0">
-                <i class="bi bi-laptop"></i> <a href="https://github.com/jkcoxson/JitStreamer/releases/"
-                    class="text-primary">JitStreamer Pair <i class="bi bi-box-arrow-up-right"></i></a>.
+                <i class="bi bi-laptop"></i> <a href="https://github.com/jkcoxson/JitStreamer/releases/" target="_blank"
+                    class="text-primary">JitStreamer Pair <i class="bi bi-box-arrow-up-right"></i></a> for your laptop.
             </p>
             <p class="fs-5 mt-3 mb-1">Icon Key</p>
             <p class="m-0">Steps or items with a <i class="bi bi-phone text-info"></i> icon will require a phone.</p>
@@ -112,7 +113,7 @@
             </p>
             <div class="d-flex flex-row mt-3">
                 <button onclick="toSlide('home')" class="btn btn-secondary mx-1"><i class="bi bi-chevron-left"></i>
-                    Back</button>
+                    Home</button>
                 <button onclick="toSlide('step1')" class="btn btn-primary">Next <i
                         class="bi bi-chevron-right"></i></button>
             </div>
@@ -121,7 +122,7 @@
             style="opacity: 0; display: none;">
             <p class="fs-4 mb-0"><i class="bi bi-phone"></i> <i class="bi bi-three-dots"></i> <i class="bi bi-wifi"></i>
             </p>
-            <h1 class="title">Getting Started</h1>
+            <h1 class="title">Quick Setup</h1>
             <p class="fs-4">Step One</p>
             <p>Open <span class="text-info">ZeroTier One</span> and add a new connection.
                 Enter "<span class="font-monospace text-info">017c0c264be7ec5b</span>" in the Network ID field.
@@ -138,12 +139,36 @@
             style="opacity: 0; display: none;">
             <p class="fs-4 mb-0"><i class="bi bi-phone"></i> <i class="bi bi-three-dots"></i> <i class="bi bi-123"></i>
             </p>
-            <h1 class="title">Getting Started</h1>
+            <h1 class="title">Quick Setup</h1>
             <p class="fs-4">Step Two</p>
-            <p>Run the <span class="text-info">JitStreamer Shortcut</span> while connected to the <span
-                    class="text-info">ZeroTier VLAN</span> to get a pairing code. You will need this in the next step.
-            </p>
-            <div class="d-flex flex-row">
+            <p>Generate a <span class="text-info">pairing code</span>. Remain on the <span class="text-info">ZeroTier
+                    VLAN</span> while you generate your code. Copy or make note of it, you will need this in the next
+                step.</p>
+            <div class="d-flex flex-md-row flex-column">
+                <div class="w-100" style="margin-bottom: 0.7rem;">
+                    <p style="font-weight: bold; font-size: large; font-style: italic; margin: 0.2rem;">iOS 15 and Newer
+                    </p>
+                    <p style="margin: 0.2rem;">Use the <span class="text-info">JitStreamer Shortcut</span></p>
+                    <a class="btn btn-info" href="shortcuts://" style="margin: 0.2rem;">Open
+                        Shortcuts</a>
+                </div>
+                <div class="w-100" style="margin-bottom: 0.7rem;">
+                    <p style="font-weight: bold; font-size: large; font-style: italic; margin: 0.2rem;"><span
+                            class="badge bg-info" id="generateCodeBadge">NEW</span> iOS 14 and Older</p>
+                    <p class="mb-3" id="generateCode" style="margin: 0.2rem;">You can now generate a code right here!
+                    </p>
+                    <a class="btn btn-info" href="./getcode/" id="generateCodeBtn" style="margin: 0.2rem;">Get Code</a>
+                </div>
+            </div>
+            <script>
+                let date = new Date();
+                // if date is past July 1, 2022, remove new tag, update text, and update button
+                if (date.getFullYear() > 2022 || (date.getFullYear() == 2022 && date.getMonth() > 6) || test) {
+                    document.getElementById("generateCodeBadge").remove();
+                    document.getElementById("generateCode").textContent = "You can generate a code right here";
+                }
+            </script>
+            <div class="d-flex flex-row" style="margin-top: 1rem;">
                 <button onclick="toSlide('step1')" class="btn btn-secondary mx-1"><i class="bi bi-chevron-left"></i>
                     Back</button>
                 <button onclick="toSlide('step3')" class="btn btn-primary">Next <i
@@ -154,25 +179,11 @@
             style="opacity: 0; display: none;">
             <p class="fs-4 mb-0"><i class="bi bi-laptop"></i> <i class="bi bi-three-dots"></i> <i
                     class="bi bi-phone"></i></p>
-            <h1 class="title">Getting Started</h1>
+            <h1 class="title">Quick Setup</h1>
             <p class="fs-4">Step Three</p>
             <p>Open <span class="text-info">JitStreamer Pair</span>, and plug in your device. Follow
-                the instructions to generate your pairing file, entering the code provided by the shortcut when
+                the instructions to generate your pairing file, entering the code you generated when
                 prompted.</p>
-            <!--   -->
-            <p class="mb-3" id="generateCode"><span class="badge bg-info" id="generateCodeBadge">NEW</span> You can now
-                generate a code from your browser! Would you like to try?
-            </p>
-            <a class="btn btn-info mb-5" href="./getcode/" id="generateCodeBtn">Tap Here</a>
-            <script>
-                let date = new Date();
-                // if date is past July 1, 2022, remove new tag, update text, and update button
-                if (date.getFullYear() > 2022 || (date.getFullYear() == 2022 && date.getMonth() > 6) || test) {
-                    document.getElementById("generateCodeBadge").remove();
-                    document.getElementById("generateCode").textContent = "You can also generate a code from your browser!";
-                    document.getElementById("generateCodeBtn").textContent = "Generate Code";
-                }
-            </script>
             <div class="d-flex flex-row">
                 <button onclick="toSlide('step2')" class="btn btn-secondary mx-1"><i class="bi bi-chevron-left"></i>
                     Back</button>
@@ -185,7 +196,7 @@
             <p class="fs-4 mb-0"><i class="bi bi-phone"></i> <i class="bi bi-three-dots"></i> <i
                     class="bi bi-view-list"></i>
             </p>
-            <h1 class="title">Getting Started</h1>
+            <h1 class="title">Quick Setup</h1>
             <p class="fs-4">Step Four</p>
             <p>Back on your phone, choose the app you want to enable JIT for from the popup menu.</p>
             <div class="d-flex flex-row">
@@ -197,7 +208,7 @@
         </div>
         <div class="flex-column align-items-center justify-content-center" id="done" style="opacity: 0; display: none;">
             <p class="fs-4 mb-0"><i class="bi bi-cash-stack"></i></p>
-            <h1 class="title">Getting Started</h1>
+            <h1 class="title">Quick Setup</h1>
             <p class="fs-4">Profit!</p>
             <p>Now you can access your favorite JIT-enabled apps on the go, wherever you have WIFI.</p>
             <div class="d-flex flex-row">
@@ -269,8 +280,8 @@
                             and legal costs. You will also receive a role in the discord server, and our unending
                             thanks.
                         </p>
-                        <a href="https://www.patreon.com/JitStreamer" class="btn btn-primary" target="_blank">Open <i
-                                class="bi bi-box-arrow-up-right"></i></a></a>
+                        <a href="https://www.patreon.com/JitStreamer" class="btn btn-primary mt-2" target="_blank">Open
+                            <i class="bi bi-box-arrow-up-right"></i></a></a>
                     </div>
                 </div>
             </div>
@@ -296,6 +307,15 @@
 
 <!-- Page Script -->
 <script>
+    window.onload = () => {
+        let params = new URLSearchParams(document.location.search);
+        let name = params.get("slide");
+        console.log('Slide', name);
+        if (name != 'home') {
+            toSlide(name);
+        }
+    };
+
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
     gsap.registerPlugin(MotionPathPlugin);
@@ -319,6 +339,10 @@
 
     let currentSlide = 'home'
     function toSlide(slide) {
+        let currentSlideElem = document.getElementById(currentSlide), slideElem = document.getElementById(slide);
+        if (!slideElem) {
+            slide = 'home';
+        }
         if (slide == 'home') {
             gsap.to("#footer", {
                 opacity: 0,
@@ -348,6 +372,10 @@
             delay: 0.5
         });
         currentSlide = slide;
+
+
+        let stateObj = { id: "100" };
+        window.history.replaceState(stateObj, "JitStreamer Startup Guide", `?slide=${slide}`);
 
         if (slide == 'done') {
             setTimeout(() => { confetti.start() }, 500);

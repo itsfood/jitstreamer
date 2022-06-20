@@ -40,10 +40,11 @@
             <div class="spinner-border" role="status" id="spinner">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <iframe src="http://69.69.0.1/potential/" frameborder="0" width="0" height="0" id="serverResponseCode"
-                style="opacity: 0;"></iframe>
-            <p id="code" style="opacity: 0;">000000</p>
-            <p id="error" style="opacity: 0; font-size: smaller; color: gainsboro;">Error Details</p>
+            <p id="code" style="opacity: 0;" class="fs-1">000000</p>
+            <p id="desc" style="opacity: 0; font-size: smaller; color: gainsboro;">Error Details</p>
+
+            <a id="backBtn" style="opacity: 0; padding-top: 0.5rem" href=" ../?slide=step3" class="btn btn-primary">Next
+                Step <i class="bi bi-chevron-right"></i></a>
         </div>
         <!-- Bootstrap Bundle with Popper -->
         <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -110,18 +111,26 @@
                     // Display pairing code
                     document.querySelector('#code').textContent = data.code;
                     document.querySelector('#title').textContent = 'Code generated successfully';
+                    document.querySelector('#desc').textContent = 'Copy this code and use it to pair your device';
                     gsap.to("#spinner", {
                         opacity: 0,
-                        display: "none",
                         duration: 0.5,
                         ease: "power2.out",
-                        delay: 0.5
                     });
                     gsap.to("#code", {
                         opacity: 1,
                         duration: 0.5,
                         ease: "power2.out",
-                        delay: 0.5
+                    });
+                    gsap.to("#desc", {
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out",
+                    });
+                    gsap.to("#backBtn", {
+                        opacity: 1,
+                        duration: 0.5,
+                        ease: "power2.out",
                     });
                 } else {
                     if (data.status == 200) {
@@ -132,8 +141,8 @@
                 }
             })
             .catch(function (error) {
-                document.querySelector('#code').textContent = 'There was an error generating your pairing code. Please try again later.';
-                document.querySelector('#error').textContent = error;
+                document.querySelector('#code').textContent = 'Error';
+                document.querySelector('#desc').textContent = error;
                 gsap.to("#spinner", {
                     opacity: 0,
                     duration: 0.5,
@@ -149,7 +158,12 @@
                     duration: 0.5,
                     ease: "power2.out",
                 });
-                gsap.to("#error", {
+                gsap.to("#desc", {
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "power2.out",
+                });
+                gsap.to("#backBtn", {
                     opacity: 1,
                     duration: 0.5,
                     ease: "power2.out",
